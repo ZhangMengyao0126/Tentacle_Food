@@ -7,15 +7,17 @@ namespace VHS
     public class InteractionController : MonoBehaviour
     {
         #region Variables
-            [Header("Data")]
-            public InteractionInputData interactionInputData;
-            public InteractionData interactionData;
+            [Space, Header("Data")]
+            [SerializeField] private InteractionInputData interactionInputData;
+            [SerializeField] private InteractionData interactionData;
 
-            [Space]
-            [Header("Ray Settings")]
-            public float rayDistance;
-            public float raySphereRadius;
-            public LayerMask interactableLayer;
+            [Space, Header("UI")]
+            [SerializeField] private InteractionUIPanel uiPanel;
+
+            [Space, Header("Ray Settings")]
+            [SerializeField] private float rayDistance;
+            [SerializeField] private float raySphereRadius;
+            [SerializeField] private LayerMask interactableLayer;
 
             #region Private
                 private Camera m_cam;
@@ -56,12 +58,14 @@ namespace VHS
                     if (interactionData.IsEmpty())
                     {
                         interactionData.Interactable = _interactable;
+                        uiPanel.SetTooltip(_interactable.TooltipMessage);
                     }
                     else
                     {
                         if (!interactionData.IsSameInteractable(_interactable))
                         {
                             interactionData.Interactable = _interactable;
+                            uiPanel.SetTooltip(_interactable.TooltipMessage);
                         }
 
                     }
@@ -69,6 +73,7 @@ namespace VHS
             }
             else
             {
+                uiPanel.RestUI();
                 interactionData.ResetData();
             }
 
@@ -91,6 +96,7 @@ namespace VHS
             {
                 m_interacting = false;
                 m_holdTimer = 0f;
+                uiPanel.UpdateProgressBar(0f);
             }
 
             if (m_interacting)
@@ -101,7 +107,10 @@ namespace VHS
                 {
                     m_holdTimer += Time.deltaTime;
 
-                    if (m_holdTimer >= interactionData.Interactable.HoldDuration)
+                    float heldPercent = m_holdTimer / interactionData.Interactable.HoldDuration;
+                    uiPanel.UpdateProgressBar(heldPercent);
+
+                    if (heldPercent >1f)
                     {
                         interactionData.Interact();
                         m_interacting = false;

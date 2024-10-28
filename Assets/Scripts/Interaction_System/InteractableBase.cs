@@ -7,11 +7,16 @@ namespace VHS
     public class InteractableBase : MonoBehaviour, IInteractable
     {
         #region Variables
-            private bool holdInteract = true;
-            private float holdDuriation = 3f;
-            
-            private bool multipleUse = false;
-            private bool isInteractable = true;
+            [Space, Header("Interactable Settings")]
+
+            [SerializeField] private bool holdInteract = true;
+            [SerializeField] private float holdDuriation = 3f;
+
+            [Space]
+            [SerializeField] private bool multipleUse = false;
+            [SerializeField] private bool isInteractable = true;
+
+        [SerializeField] private string tooltipMessage = "interact";
         #endregion
 
         #region Properties
@@ -19,6 +24,8 @@ namespace VHS
             public bool HoldInteract => holdInteract;
             public bool MultipleUse => multipleUse;
             public bool IsInteractable => isInteractable;
+
+        public string TooltipMessage => tooltipMessage;
         #endregion
 
         #region Methods
