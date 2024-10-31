@@ -7,4 +7,4 @@
 ### Property
 1. A special kind of class member that provides controlled access to the data (often stored in a private field).<br>
 2. Properties allow you to include logic in their get and set accessors, which can manage several behaviors you want to implement when accessing or modifying the data.<br>
-![image](https://github.com/user-attachments/assets/2abcfb92-b094-46b7-a85d-e55ec2dbe96d)
+<img src="https://github.com/user-attachments/assets/2abcfb92-b094-46b7-a85d-e55ec2dbe96d" width="600" height="430" />
