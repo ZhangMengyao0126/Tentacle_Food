@@ -2,7 +2,7 @@
 ### Field
 1. A variable that is declared directly in a class or struct. It holds data.<br>
 2. Fields allow you to access their values directly when they're public.<br>
-<img src="https://github.com/user-attachments/assets/b337d8d7-ce52-4d24-84f0-21a677a26448" width="270" height="100" />
+<img src="https://github.com/user-attachments/assets/b337d8d7-ce52-4d24-84f0-21a677a26448" width="280" height="100" />
 
 ### Property
 1. A special kind of class member that provides controlled access to the data (often stored in a private field).<br>
