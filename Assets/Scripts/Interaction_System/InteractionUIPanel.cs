@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace VHS
+namespace TF
 {
     public class InteractionUIPanel : MonoBehaviour
     {
