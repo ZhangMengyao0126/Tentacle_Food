@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TF
 {    
     public class InputHandler : MonoBehaviour
-    // MonoBehaviour: A base class in Unity that allows the script to be attached to GameObjects and provides methods to respond to Unity events.
+    //MonoBehaviour: A base class in Unity that allows the script to be attached to GameObjects and provides methods to respond to Unity events.
+    //We attached this script to an empty gameobject, which is still a valid GameObject, meaning it can be activated in the scene.
+    //When the scene starts, Unity enables all active GameObjects and their components (including our InputHandler script).
     {
         #region Data
         public InteractionInputData interactionInputData;
+        //This is also a reference.
         //Since InteractionInputData is a ScriptableObject, we can only access it through an instance of it.
         #endregion
 

@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TF;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
+using UnityEditor;
 using UnityEngine;
+using static Cinemachine.DocumentationSortingAttribute;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace TF
 {
@@ -9,20 +14,26 @@ namespace TF
     //IInteractable: Right click on the interface that the class implements can show a quick way to create all the principles it requests.
     {
         #region Variables
-            [Space, Header("Interactable Settings")]
+        [Space, Header("Interactable Settings")]
 
-            [SerializeField] private bool holdInteract = true;
-            [SerializeField] private float holdDuration = 3f;
+        [SerializeField] private bool holdInteract = true;
+        [SerializeField] private float holdDuration = 3f;
 
-            [Space]
-            [SerializeField] private bool multipleUse = false;
-            [SerializeField] private bool isInteractable = true;
+        [Space]
+        [SerializeField] private bool multipleUse = false;
+        [SerializeField] private bool isInteractable = true;
 
         [SerializeField] private string tooltipMessage = "interact";
+        //[SerializeField]:
+        //Allows private fields to be visible and editable in the Unity Inspector while still maintaining their private access level.
+        //This means you can set the value of the property in the Inspector when you create a GameObject with the component attached,
+        //even though the field itself is private and can't be accessed from outside that class.
         #endregion
-
         #region Properties
-            public float HoldDuration => holdDuration;
+        //A good habit: These provide read-only access to the private fields defined above,
+        ////////////////making them accessible to other classes while keeping the fields themselves encapsulated.
+
+        public float HoldDuration => holdDuration;
             //Simplified for:
             //get
             //{
@@ -36,6 +47,7 @@ namespace TF
 
         #region Methods
         public virtual void OnInteract()
+        //virtual: means this method can be overridden by any derived classes.
         {
             Debug.Log("INTERACTED: " + gameObject.name);
         }

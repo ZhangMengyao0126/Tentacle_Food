@@ -4,12 +4,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TF
-//Namespace: A collection of name definitions of classes,interfaces, methods, and variables.
+//Namespace: A collection of name definitions of classes, interfaces, methods, and variables.
 /////////////The same namespace shares all the names within it.
 {
     public interface IInteractable
 //Interface: A contract that specifies a set of rules or a protocol that classes must follow if they choose to implement that interface.
-/////////////For IInteractable, it includes all the variables that will be needed in every interactable.
+/////////////For IInteractable, it includes all the properties that will be needed in every interactable.
     {
         float HoldDuration { get; }
         //{ get; }:A get accessor, meaning it's a read-only property.
