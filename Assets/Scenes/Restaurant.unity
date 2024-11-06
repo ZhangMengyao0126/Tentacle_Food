@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdInteract: 1
-  holdDuriation: 3
+  holdDuration: 1
   multipleUse: 0
   isInteractable: 1
   tooltipMessage: DESTROY ME

@@ -23,6 +23,9 @@ namespace TF
         [SerializeField] private bool multipleUse = false;
         [SerializeField] private bool isInteractable = true;
 
+        //you can assign a static value (like a number, string, or reference) to a field directly during initialization,
+        //but you cannot call methods that rely on the Unity lifecycle (like GetComponent, Instantiate, etc.) during field initialization.
+
         [SerializeField] private string tooltipMessage = "interact";
         //[SerializeField]:
         //Allows private fields to be visible and editable in the Unity Inspector while still maintaining their private access level.
@@ -32,17 +35,20 @@ namespace TF
         #region Properties
         //A good habit: These provide read-only access to the private fields defined above,
         ////////////////making them accessible to other classes while keeping the fields themselves encapsulated.
-
         public float HoldDuration => holdDuration;
-            //Simplified for:
-            //get
-            //{
-            //  return holdDuriation;
-            //}
-            public bool HoldInteract => holdInteract;
-            public bool MultipleUse => multipleUse;
-            public bool IsInteractable => isInteractable;
-            public string TooltipMessage => tooltipMessage;
+        //Simplified for:
+        //get
+        //{
+        //  return holdDuriation;
+        //}
+        public bool HoldInteract => holdInteract;
+        public bool MultipleUse => multipleUse;
+        public bool IsInteractable => isInteractable;
+        public string TooltipMessage
+        {
+            get => tooltipMessage;
+            set => tooltipMessage = value;
+        }
         #endregion
 
         #region Methods

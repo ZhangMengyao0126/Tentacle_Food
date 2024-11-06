@@ -19,7 +19,7 @@ namespace TF
         bool MultipleUse { get; }
         //Objects can be interacted with multiple times.
         bool IsInteractable { get; }
-        string TooltipMessage { get; }
+        string TooltipMessage { get; set; }
 
         void OnInteract();
         //Every class that implements this interface should have this method.
