@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+  - Ingredient2
+  - Ingredient1
+  - Ingredient3
+  - Final_Dish
   layers:
   - Default
   - TransparentFX
