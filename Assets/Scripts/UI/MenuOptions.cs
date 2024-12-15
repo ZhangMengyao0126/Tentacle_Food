@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;  // Required for scene loading
 using UnityEngine.UI;  // Required for UI components
 
 public class MenuOptions : MonoBehaviour
-{   
+{
     void Start()
     {
         //Set Cursor to be visible
@@ -11,6 +11,8 @@ public class MenuOptions : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
     // This function is called when the "Play" button is clicked
+
+
     public void PlayGame()
     {
         // Replace "GameScene" with the actual name of your game scene
@@ -36,4 +38,5 @@ public class MenuOptions : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
 }
